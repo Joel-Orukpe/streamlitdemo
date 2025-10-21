@@ -93,7 +93,7 @@ Remember: You're here to make customers feel welcome and help them have a great 
 
 # Initialize chat session
 if "chat" not in st.session_state:
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     st.session_state.chat = model.start_chat(history=[])
     # Send system prompt as first message (not shown to user)
     st.session_state.chat.send_message(SYSTEM_PROMPT)
