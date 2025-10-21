@@ -12,13 +12,32 @@ st.set_page_config(
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 # Custom CSS for better design
+# Custom CSS for better design
 st.markdown("""
     <style>
-    .stChatMessage {
-        background-color: #f0f2f6;
-        border-radius: 10px;
-        padding: 10px;
-        margin: 5px 0;
+    /* User messages - blue background */
+    .stChatMessage[data-testid="user-message"] {
+        background-color: #4A90E2;
+        color: white;
+        border-radius: 15px;
+        padding: 12px;
+        margin: 8px 0;
+    }
+    
+    /* Assistant messages - light gray background */
+    .stChatMessage[data-testid="assistant-message"] {
+        background-color: #F5F5F5;
+        color: #1F1F1F;
+        border-radius: 15px;
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #E0E0E0;
+    }
+    
+    /* Make all text inside chat messages readable */
+    .stChatMessage p {
+        color: inherit !important;
+        margin: 0;
     }
     </style>
     """, unsafe_allow_html=True)
